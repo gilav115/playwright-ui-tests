@@ -1,0 +1,24 @@
+{
+  "name": "conduit-automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "npm run lint && playwright test",
+    "test:chrome": "npm run lint && playwright test --project=chromium",
+    "test:firefox": "npm run lint && playwright test --project=firefox",
+    "test:safari": "npm run lint && playwright test --project=webkit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.3.3",
+    "@typescript-eslint/eslint-plugin": "^8.56.1",
+    "@typescript-eslint/parser": "^8.56.1",
+    "eslint": "^10.0.2"
+  }
+}

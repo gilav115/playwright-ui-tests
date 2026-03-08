@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler", // Optimized for modern tooling
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "types": ["node", "@playwright/test"],
+    "strict": true,
+    "isolatedModules": true, // Ensures files can be safely transpiled by esbuild
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noUnusedLocals": true, // No sloppy code allowed
+    "noUnusedParameters": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["tests/**/*.ts", "playwright.config.ts"] 
+}
