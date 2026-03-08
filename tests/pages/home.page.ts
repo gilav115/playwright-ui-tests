@@ -1,6 +1,5 @@
 import { expect, Locator, Page } from "@playwright/test";
 import { NavigablePage } from "./contracts/navigable.page";
-import { Article } from "../types/article.types";
 import { ArticlePreview } from "../components/article-preview.component";
 
 export class HomePage extends NavigablePage {
