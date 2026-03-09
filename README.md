@@ -1,4 +1,4 @@
-# UI Automation Assessment
+# UI Automation With PlayWright + TypeScript
 
 ## Purpose
 
@@ -62,7 +62,7 @@ npx playwright install --with-deps
 - Frontend: http://localhost:4200
 - Backend API: http://localhost:8000
 
-\_Wait for container are fully started before running tests (validate via frontend URL)
+\_Wait for container are fully start before running tests (validate via frontend URL)
 
 ---
 
@@ -79,7 +79,7 @@ Configuration is defined in: `playwright.config.ts`
 - Retries disabled -> `retries: 0`
 - Artifacts retained on failure: trace, screenshot, video
 
-Tests run against the configured base URL: `env.baseUrl`
+Tests run against the configured base URL: `env.baseUrl` (defined in `env.ts`).
 
 **Parallel Execution**
 
