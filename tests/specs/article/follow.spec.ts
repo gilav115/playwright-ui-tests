@@ -1,6 +1,6 @@
-import { test, expect } from "../fixtures/base.fixture";
-import { HomePage } from "../pages/home.page";
-import { UserCredentials } from "../types/user.types";
+import { test, expect } from "../../fixtures/base.fixture";
+import { HomePage } from "../../pages/home.page";
+import { UserCredentials } from "../../types/user.types";
 
 test.describe("Follow", () => {
   let follower: UserCredentials;

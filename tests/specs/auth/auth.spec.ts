@@ -1,6 +1,6 @@
-import { test } from "../fixtures/base.fixture";
-import { SignUpPage } from "../pages/signup.page";
-import { SignInPage } from "../pages/signin.page";
+import { test } from "../../fixtures/base.fixture";
+import { SignUpPage } from "../../pages/signup.page";
+import { SignInPage } from "../../pages/signin.page";
 
 test.describe("Auth", () => {
   test("should allow a newly registered user to sign in", async ({

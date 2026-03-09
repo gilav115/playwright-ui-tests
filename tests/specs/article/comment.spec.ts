@@ -1,11 +1,11 @@
-import { test, expect } from "../fixtures/base.fixture";
-import { HomePage } from "../pages/home.page";
-import { EditorPage } from "../pages/editor.page";
-import { MyProfilePage } from "../pages/profile.page";
-import { ArticlePage } from "../pages/article.page";
-import { UserCredentials } from "../types/user.types";
-import { Article } from "../types/article.types";
-import { uniqueString } from "../utils/random.util";
+import { test, expect } from "../../fixtures/base.fixture";
+import { HomePage } from "../../pages/home.page";
+import { EditorPage } from "../../pages/editor.page";
+import { MyProfilePage } from "../../pages/profile.page";
+import { ArticlePage } from "../../pages/article.page";
+import { UserCredentials } from "../../types/user.types";
+import { Article } from "../../types/article.types";
+import { uniqueString } from "../../utils/random.util";
 
 test.describe("Comment", () => {
   let editorPage: EditorPage;

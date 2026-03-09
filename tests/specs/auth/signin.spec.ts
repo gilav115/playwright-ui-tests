@@ -1,5 +1,5 @@
-import { test, expect } from "../fixtures/base.fixture";
-import { SignInPage } from "../pages/signin.page";
+import { test, expect } from "../../fixtures/base.fixture";
+import { SignInPage } from "../../pages/signin.page";
 
 type Field = "email" | "password";
 

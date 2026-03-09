@@ -1,6 +1,6 @@
-import { test, expect } from "../fixtures/base.fixture";
-import { SignUpPage } from "../pages/signup.page";
-import { SignInPage } from "../pages/signin.page";
+import { test, expect } from "../../fixtures/base.fixture";
+import { SignUpPage } from "../../pages/signup.page";
+import { SignInPage } from "../../pages/signin.page";
 
 /**
  * User fields for registration
