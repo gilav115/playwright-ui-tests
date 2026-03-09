@@ -1,15 +1,11 @@
 import { test, expect } from "../../fixtures/base.fixture";
 import { HomePage } from "../../pages/home.page";
-import { EditorPage } from "../../pages/editor.page";
-import { MyProfilePage } from "../../pages/profile.page";
 import { ArticlePage } from "../../pages/article.page";
 import { UserCredentials } from "../../types/user.types";
 import { Article } from "../../types/article.types";
 import { uniqueString } from "../../utils/random.util";
 
 test.describe("Comment", () => {
-  let editorPage: EditorPage;
-  let myProfilePage: MyProfilePage;
   let articlePage: ArticlePage;
   let homePage: HomePage;
 
@@ -35,7 +31,7 @@ test.describe("Comment", () => {
 
     await test.step("Sign in user under test", async () => {
       commentingUser = userFactory(2);
-      const auth = await api.auth(publishingUser);
+      const auth = await api.auth(commentingUser);
       await expect(auth, "Create publishingUser via API failed").toBeOK();
 
       const { user } = await auth.json();
@@ -47,8 +43,6 @@ test.describe("Comment", () => {
       }, token);
 
       homePage = new HomePage(page);
-      myProfilePage = new MyProfilePage(page);
-      editorPage = new EditorPage(page);
       articlePage = new ArticlePage(page);
     });
   });
