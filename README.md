@@ -12,14 +12,52 @@ The focus is correctness, readability, and engineering judgement rather than exh
 
 ---
 
+## Quick Start
+
+Follow these steps to run the tests locally:
+
+1. Clone and install
+
+```
+git clone https://github.com/gilav115/playwright-ui-tests
+cd playwright-ui-tests
+npm install
+npx playwright install --with-deps
+```
+
+2. Start the application
+
+```
+docker compose up
+```
+
+Wait until setup is complete and http://localhost:4200 is accessible in your browser before proceeding.
+
+3. Run tests
+
+```
+npm test # run tests on all supported browsers
+npm run test:chrome # run on a specific browser. also supports firefox and safari
+```
+
+4. Additional commands
+
+`npm playwright codegen http://localhost:4200` Playwright code generator helper tool
+
+`npx playwright test --project=chromium --ui` open Playwright interactive UI mode
+
+`npx playwright show-report` view last report
+
+For more details information see below.
+
+---
+
 ## Technology Stack
 
 - Playwright (TypeScript)
 - Node.js
 - Docker
 - Playwright Test Runner
-
----
 
 ## Requirements
 
@@ -44,8 +82,8 @@ Docker is required to run the demo application locally.
 ## Project Setup
 
 ```
-git clone <repository-url>
-cd <repository>
+git clone https://github.com/gilav115/playwright-ui-tests
+cd playwright-ui-tests
 npm install
 npx playwright install --with-deps
 ```
@@ -55,14 +93,15 @@ npx playwright install --with-deps
 ## Running the Application Locally
 
 1. Unzip the provided demo application.
-2. Start the application using Docker: `docker compose up`
+2. Go to the application main folder.
+3. Start the application using Docker: `docker compose up`
 
 **Application URLs:**
 
 - Frontend: http://localhost:4200
 - Backend API: http://localhost:8000
 
-\_Wait for container are fully start before running tests (validate via frontend URL)
+\_Wait for container to fully start before running tests (validate via frontend URL)
 
 ---
 
