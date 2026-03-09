@@ -2,6 +2,8 @@ name: Code Quality Check
 on:
   pull_request:
     branches: [ main, master ]
+  push:
+    branches: [ main, master ]
   workflow_dispatch:
 
 jobs:
