@@ -1,43 +1,29 @@
-import { expect, Locator, Page } from "@playwright/test";
+import { Locator, Page } from "@playwright/test";
 import { NavigablePage } from "./contracts/navigable.page";
-import { ArticlePreview } from "../components/article-preview.component";
 
 export class HomePage extends NavigablePage {
-  readonly emptyFeedMessage: Locator;
-  readonly popularTags: Locator;
-  readonly myFeed: Locator;
-  readonly articlePreview: ArticlePreview;
+  readonly shoppingCart: Locator;
+
+  protected buildPath(): string {
+    return "/inventory";
+  }
 
   constructor(page: Page) {
     super(page);
-
-    this.emptyFeedMessage = page.getByText("No articles are here... yet.");
-    this.popularTags = page.getByText("Popular Tags");
-    this.myFeed = page.getByText("My Feed");
-    this.articlePreview = new ArticlePreview(page);
+    this.shoppingCart = page.locator('[data-test="shopping-cart-link"]');
   }
 
-  protected buildPath(): string {
-    return "#";
+  protected async verifyElements(): Promise<void> {}
+
+  async addToCart(name: string): Promise<void> {
+    await this.page
+      .getByText(name, { exact: true })
+      .locator("..")
+      .getByRole("button", { name: "Add to cart" })
+      .click();
   }
 
-  async verifyElements(): Promise<void> {
-    await expect(
-      this.myFeed,
-      "My Feed button not visible in home page",
-    ).toBeVisible();
-
-    await expect(
-      this.articlePreview.loadingArticlesMessage,
-      "loading articles state stuck",
-    ).toBeHidden();
-  }
-
-  async goToSignIn() {
-    await this.navbar.goToSignIn();
-  }
-
-  async goToSignUp() {
-    await this.navbar.goToSignUp();
+  async goToCart(): Promise<void> {
+    await this.shoppingCart.click();
   }
 }

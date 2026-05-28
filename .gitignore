@@ -1,4 +1,7 @@
 
+# Environment
+.env
+
 # Playwright
 node_modules/
 /test-results/
@@ -6,4 +9,14 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+
+# OS
 .DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# Claude
+.claude/
