@@ -28,18 +28,20 @@ jobs:
       id: playwright-cache
       with:
         path: ~/.cache/ms-playwright
-        key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+        # Scope cache to chromium only. To add firefox/webkit, extend the install
+        # command below and update this key so the cache invalidates correctly.
+        key: playwright-chromium-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
 
     - name: Install Playwright browsers
       if: steps.playwright-cache.outputs.cache-hit != 'true'
-      run: npx playwright install --with-deps
+      run: npx playwright install --with-deps chromium
 
     - name: Install Playwright system dependencies
       if: steps.playwright-cache.outputs.cache-hit == 'true'
-      run: npx playwright install-deps
+      run: npx playwright install-deps chromium
 
     - name: Run Playwright tests
-      run: npx playwright test
+      run: npx playwright test --project=chromium --project=auth-suite --project=setup:user --project=setup:admin
       env:
         TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD || 'template_placeholder' }}
         ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD || 'template_placeholder' }}
