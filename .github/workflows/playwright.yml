@@ -40,6 +40,9 @@ jobs:
 
     - name: Run Playwright tests
       run: npx playwright test
+      env:
+        TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD || 'template_placeholder' }}
+        ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD || 'template_placeholder' }}
 
     # Allure reporting — install allure-playwright and uncomment to enable
     # - name: Generate Allure report

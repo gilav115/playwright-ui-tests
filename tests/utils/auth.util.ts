@@ -11,11 +11,8 @@ export async function loginViaUI(page: Page, credentials: UserCredentials): Prom
   await page.waitForURL(/.*\/#\//);
 }
 
-export async function saveSession(page: Page, credentials: UserCredentials, storagePath: string): Promise<void> {
+export async function saveSession(_page: Page, _credentials: UserCredentials, storagePath: string): Promise<void> {
   await mkdir(dirname(storagePath), { recursive: true });
-  // await loginViaUI(page, credentials);
-  // await page.context().storageState({ path: storagePath });
-
-  console.log(storagePath);
-  // await writeFile(storagePath, JSON.stringify({ cookies: [], origins: [] }));
+  // await loginViaUI(_page, _credentials);
+  // await _page.context().storageState({ path: storagePath });
 }

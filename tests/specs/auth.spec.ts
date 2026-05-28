@@ -13,7 +13,7 @@ import { test } from "../fixtures/base.fixture";
 import { USERS } from "../../config/tags";
 
 test.describe("Authenticated", () => {
-  test("should display home feed when signed in", { tag: USERS.USER.label }, async ({ page }) => {
+  test("should display home feed when signed in", { tag: USERS.USER.label }, async () => {
       
   });
 });

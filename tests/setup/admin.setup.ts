@@ -8,5 +8,4 @@ import { USERS } from "../../config/tags";
 
 setup("authenticate as admin", async ({ page, userFactory }) => {
   await saveSession(page, userFactory.existing(USERS.ADMIN), USERS.ADMIN.storagePath);
-  console.log("authenticating admin...");
 });

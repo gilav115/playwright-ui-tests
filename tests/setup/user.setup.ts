@@ -7,6 +7,5 @@ import { saveSession } from "../utils/auth.util";
 import { USERS } from "../../config/tags";
 
 setup("authenticate as user", async ({ page, userFactory }) => {
-  // await saveSession(page, userFactory.existing(USERS.USER), USERS.USER.storagePath);
-  console.log("authenticating user...");
+  await saveSession(page, userFactory.existing(USERS.USER), USERS.USER.storagePath);
 });
